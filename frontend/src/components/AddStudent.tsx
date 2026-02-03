@@ -18,7 +18,7 @@ const AddStudent = ({reload}: AddStudentProps) => {
 
     try {
       const response = await fetch(
-        `${BACKEND_ENDPOINT}`,
+        `${BACKEND_ENDPOINT}/students`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -49,14 +49,14 @@ const AddStudent = ({reload}: AddStudentProps) => {
 
       <Input
         type="text"
-        label="Student ID"
+        label="ID"
         value={student.id}
         onChangeText={text => setStudent({ ...student, id: text })}
         className="w-full p-2 mt-1 border rounded-lg focus:ring focus:ring-blue-300"
       />
       <Input
         type="text"
-        label="Student ID"
+        label="Name"
         value={student.name}
         onChangeText={text => setStudent({ ...student, name: text })}
         className="w-full p-2 mt-1 border rounded-lg focus:ring focus:ring-blue-300"
